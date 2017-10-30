@@ -1,0 +1,12 @@
+{
+  "name": "sublime-filelog",
+  "version": "1.0.0",
+  "description": "display calendar for sublime-filelog plugins",
+  "main": "index.php",
+  "author": "le N?KO",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "fontawesome": "^4.7.2"
+  }
+}
