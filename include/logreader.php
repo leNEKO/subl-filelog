@@ -27,13 +27,9 @@ class logreader {
 	public $date;
 	public $date_path;
 
-	function __construct($date){
+	function __construct($date, $path = "/home/neko/sublime-filelog"){
 		$this->date = $date;
-		// chemin du fichier pour cette date
-		$tmp = explode("-", $date);
-		unset($tmp[2]);
-		$this->date_path = implode("/",$tmp);
-		$this->read();
+		$this->read($path);
 	}
 
 	function test($path = "/home/neko/sublime-filelog"){
@@ -96,8 +92,8 @@ class logreader {
 		$this->stock = $stock;
 	}
 
-	function read($path = "/home/neko/sublime-filelog"){
-		$path = $path . "/" . $this->date_path;
+	function read($path){
+		$path = $path;
 		$cmd = "find $path -type f -follow -exec cat {} \;";
 		$tmp = explode(PHP_EOL,shell_exec($cmd));
 		foreach($tmp as $line){

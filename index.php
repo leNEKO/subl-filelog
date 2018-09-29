@@ -4,9 +4,10 @@ require __DIR__ . '/include/logreader.php';
 
 if(!$cur_date = @$_GET["date"]){
 	$tmp = new DateTime();
-	$cur_date = $tmp->format("Y-m-d");
+	$cur_date = $tmp->format("Y-m");
 }
-$logs = new logreader($cur_date);
+// $logs = new logreader($cur_date,"/home/neko/sublime-filelog-home");
+$logs = new logreader($cur_date,"files");
 $period = $logs->get();
 
 ob_start();
@@ -99,7 +100,7 @@ $table = ob_get_clean();
 		<div class="row flex-xl-nowrap">
 			<div class="col-2 bd-sidebar">
 				<form action="" class="form">
-					<input name="date" class="form-control" value="<?=$cur_date;?>" onchange="form.submit();">
+					<input name="date" type="month" class="form-control" value="<?=$cur_date;?>" onchange="form.submit();">
 				</form>
 				<br/>
 				<div class="list-group">

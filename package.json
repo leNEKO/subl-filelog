@@ -6,7 +6,7 @@
   "author": "le N?KO",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "~> 4.1.2",
     "fontawesome": "^4.7.2"
   }
 }
